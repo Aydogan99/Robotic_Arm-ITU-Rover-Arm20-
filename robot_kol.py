@@ -58,7 +58,11 @@ class robotic_arm():
 	T5_6=genT(t[5],a[5],d[5],alpha[5])
 	T0_2=np.dot(T0_1,T1_2)
 	T0_3=np.dot(T0_2,T2_3)
-	a=np.dot(T1_2,T2_3)
+	T0_4=np.dot(T0_3,T3_4)
+	T0_5=np.dot(T0_4,T4_5)
+	T0_6=np.dot(T0_5,T5_6)
+	T1_3=np.dot(T1_2,T2_3)
+	
 	T3=[[r11,r12,r13,px],[r21,r22,r23,py],[r31,r32,r33,pz],[0,0,0,1]]
 	
 	#print(T0_1)
@@ -69,14 +73,24 @@ class robotic_arm():
 	px=1
 	py=1
 	pz=1
+	print("T0_1\n",T0_1)
+	print("T1_2\n",T1_2)
 
 	z=np.matrix(a)
 	t_0=np.arcsin((pz-1)/300)
 	t_1=np.arcsin(((300-px)*np.cos(t_0)-py*np.sin(t_0))/400)
 	t_2=t_0-t_1
 	print("t0: t1: t2:",t_0,t_1,t_2)
-	
-	print(z)
+	print("\n")
+	print("T1_2*T2_3",np.matrix(T1_3))
+	print("\n")
+	T0_6=np.matrix(T0_6)
+	print(T0_6)
+	print("\n")
+	print(len(T0_6[0]))
+	for i in range(len(T0_6)):
+		for j in range(len(T0_6[0])):
+			print("{} {} {} {} {} \n".format(i+1,"satır",j+1,"sutun",(T0_6[i][j])))
 	
 	
 	
