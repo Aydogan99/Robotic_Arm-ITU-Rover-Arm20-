@@ -85,7 +85,7 @@ def Euler_Inverse(Px,Py,Pz,x,y,z):
 
     return "t0:",t0,"t1:",t1,"t2:",t2,"t3:",t3,"t4:",t4,"t5:",t5
 
-Angles=Euler_Inverse(0.2,0.4,0.7,0.1,0.2,0.4)
+Angles=Euler_Inverse(0.2,0.4,0.7,0.1,0.2,0.4)   # input values : location of end effector px py pz  and  roll , pitch yaw angles of end effector x y z
 
 print(Angles)	
 
